@@ -93,6 +93,7 @@ namespace Day33EmployeePayrollDB
                     command.Parameters.AddWithValue("@EmployeeID", payroll.EmployeeID);
                     command.Parameters.AddWithValue("@Name", payroll.Name);
                     command.Parameters.AddWithValue("@BasicPay", payroll.BasicPay);
+                    command.Prepare();
                     Connection.Open();
                     int result = command.ExecuteNonQuery();
                     if (result != 0)

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day33EmployeePayrollDB", "Day33EmployeePayrollDB\Day33EmployeePayrollDB.csproj", "{36EC783E-7EC6-4C89-A2DA-55A6E25F56A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Day33EmployeePayrollDB", "Day33EmployeePayrollDB\Day33EmployeePayrollDB.csproj", "{36EC783E-7EC6-4C89-A2DA-55A6E25F56A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -15,6 +15,7 @@ namespace Day33EmployeePayrollDB
             Payroll.Gender = "M";
             EmployeeRepository employeeRepository = new EmployeeRepository();
             employeeRepository.GetAllEmployees();
+            employeeRepository.AddEmployee(Payroll);
             Console.ReadLine();
         }
     }

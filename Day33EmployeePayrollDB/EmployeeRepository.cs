@@ -52,7 +52,34 @@ namespace Day33EmployeePayrollDB
                 Console.WriteLine(ex.Message);
             }
         }
+        public void AddEmployee(EmployeePayroll Payroll)
+        {
+            try
+            {
+                Connection = new SqlConnection(ConnectingString);
+                SqlCommand cmd = new SqlCommand("dbo.spAddEmployee", Connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Name", Payroll.Name);
+                cmd.Parameters.AddWithValue("@Address", Payroll.Address);
+                cmd.Parameters.AddWithValue("@BasicPay", Payroll.BasicPay);
+                cmd.Parameters.AddWithValue("@Phone", Payroll.Phone);
+                cmd.Parameters.AddWithValue("@Gender", Payroll.Gender);
+                Connection.Open();
+                int result = cmd.ExecuteNonQuery();
+                if (result != 0)
+                    Console.WriteLine("Employee inserted successfully into table");
+                else
+                    Console.WriteLine("Not Insertes");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
 
-       
     }
 }

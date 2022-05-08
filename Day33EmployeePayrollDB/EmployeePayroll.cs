@@ -8,6 +8,7 @@ namespace Day33EmployeePayrollDB
 {
     public class EmployeePayroll
     {
+
         public int EmployeeID { get; set; }
         public int Phone { get; set; }
         public double BasicPay { get; set; }

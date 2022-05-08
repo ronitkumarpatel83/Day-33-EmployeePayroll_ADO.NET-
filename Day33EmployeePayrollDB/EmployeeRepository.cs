@@ -80,6 +80,36 @@ namespace Day33EmployeePayrollDB
                 Connection.Close();
             }
         }
+        
+        public void UpdateEmployee(EmployeePayroll payroll)
+        {
+            try
+            {
+                using (Connection = new SqlConnection(ConnectingString))
+                {
+                    EmployeePayroll payrollUpdate = new EmployeePayroll();
+                    SqlCommand command = new SqlCommand("dbo.spUpdateEmployee",Connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@EmployeeID", payroll.EmployeeID);
+                    command.Parameters.AddWithValue("@Name", payroll.Name);
+                    command.Parameters.AddWithValue("@BasicPay", payroll.BasicPay);
+                    Connection.Open();
+                    int result = command.ExecuteNonQuery();
+                    if (result != 0)
+                        Console.WriteLine("Update Successfully");
+                    else
+                        Console.WriteLine("Unsuccessfull");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
 
     }
 }

@@ -8,14 +8,13 @@ namespace Day33EmployeePayrollDB
         {
             Console.WriteLine("Welcome to ADO.NET Program");
             EmployeePayroll Payroll = new EmployeePayroll();
-            Payroll.Name = "Abhilash";
-            Payroll.Address = "Patnagarh";
-            Payroll.Phone = 896465465;
-            Payroll.BasicPay = 700000;
-            Payroll.Gender = "M";
+            Payroll.Name = "Terissa";
+            Payroll.EmployeeID = 6;
+            Payroll.BasicPay = 3000000;
             EmployeeRepository employeeRepository = new EmployeeRepository();
             employeeRepository.GetAllEmployees();
             employeeRepository.AddEmployee(Payroll);
+            employeeRepository.UpdateEmployee(Payroll);
             Console.ReadLine();
         }
     }
